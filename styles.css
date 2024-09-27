@@ -1,0 +1,185 @@
+body {
+    background-color: #1c1c1c; /* خلفية داكنة */
+    color: #ffffff; /* لون النص */
+    font-family: 'Arial', sans-serif; /* نوع الخط */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    transition: background-color 0.5s; /* حركة عند تغيير الخلفية */
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    overflow-y: auto;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #00ff99; /* لون النص */
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px rgba(0, 255, 153, 0.7); /* ظل نص لإبراز العناوين */
+    transition: color 0.3s; /* حركة عند تغيير اللون */
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #aaaaaa; /* لون نص الفقرات */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #00ff99; /* لون حدود المدخل */
+    font-size: 1rem;
+    background-color: #2c2c2c; /* خلفية المدخل */
+    color: white;
+    transition: border-color 0.3s; /* حركة عند تغيير حدود المدخل */
+}
+
+.search-bar input:focus {
+    border-color: #00ccff; /* تغيير لون الحدود عند التركيز */
+}
+
+.search-bar button {
+    background-color: #00ff99; /* لون زر البحث */
+    color: #1c1c1c; /* لون نص الزر */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s; /* حركة عند تغيير لون الزر */
+}
+
+.search-bar button:hover {
+    background-color: #007f66; /* لون الزر عند التمرير فوقه */
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(51, 51, 51, 0.9); /* خلفية الاقتراحات */
+    z-index: 1000;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); /* ظل للعنصر */
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #00ff99; /* حدود بين الاقتراحات */
+    transition: background-color 0.3s; /* حركة عند تغيير خلفية الاقتراحات */
+}
+
+#suggestions div:hover {
+    background-color: rgba(0, 127, 102, 0.7); /* تغيير لون الخلفية عند التمرير */
+}
+
+#popular-tools {
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #00ff99; /* لون حدود الجدول */
+}
+
+th {
+    background-color: #00ff99; /* خلفية الرأس */
+    color: #1c1c1c; /* لون نص الرأس */
+    font-size: 1.1rem;
+}
+
+td {
+    background-color: #333333; /* خلفية خلايا الجدول */
+    color: #ffffff; /* لون نص الخلايا */
+}
+
+a {
+    color: #00ff99; /* لون الروابط */
+    text-decoration: none;
+    transition: color 0.3s; /* حركة عند تغيير لون الرابط */
+}
+
+a:hover {
+    text-decoration: underline; /* تأثير عند تمرير الفأرة */
+    color: #00ccff; /* تغيير لون الرابط عند التمرير */
+}
+
+.search-results {
+    max-height: 400px; /* الحد الأقصى لارتفاع نتائج البحث */
+    overflow-y: scroll; /* إضافة تمرير عمودي */
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #2e2e2e; /* خلفية نتائج البحث */
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); /* ظل للعنصر */
+}
+
+.search-results .result-item {
+    border: 1px solid #00ff99; /* حدود العناصر */
+    padding: 15px;
+    margin-bottom: 10px; /* مسافة بين العناصر */
+    border-radius: 8px; /* زوايا دائرية للعناصر */
+    background-color: #3e3e3e; /* خلفية العناصر */
+    text-align: left; /* محاذاة النص إلى اليسار */
+    transition: transform 0.2s; /* حركة عند تغيير حجم العناصر */
+}
+
+.search-results .result-item:hover {
+    transform: scale(1.02); /* تكبير العنصر عند التمرير */
+}
+
+.search-results .result-item img {
+    max-width: 100px; /* عرض الصورة */
+    float: right; /* محاذاة الصورة إلى اليمين */
+    margin-left: 15px; /* مسافة بين الصورة والنص */
+}
+
+.search-results .result-item h3 {
+    font-size: 1.3rem; /* حجم عنوان العناصر */
+    color: #00ff99; /* لون العنوان */
+}
+
+.search-results .result-item p {
+    color: #cccccc; /* لون النص في العناصر */
+}
+
+.search-results .result-item a {
+    color: #00ff99; /* لون الروابط داخل العناصر */
+}
